@@ -45,7 +45,7 @@ curl http://${K8S_SERVICE_IP}:8080/runtimeException
 
 ## NullPointerException
 ```
-curl http://${K8S_SERVICE_IP}:8080/runtimeException
+curl http://${K8S_SERVICE_IP}:8080/nullPointerException
 ```
 
 ## ClassNotFoundException
