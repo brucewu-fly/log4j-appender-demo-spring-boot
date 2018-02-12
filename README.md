@@ -11,6 +11,7 @@ docker run -e JAVA_OPTS="-Dproject={your_project} -Dlogstore={your_logstore} -De
 # K8s
 
 ## Create deployment
+Replace JAVA_OPTS with your own AliCloud Log Service configuration.
 ```
 kubectl create -f demo-deployment.yaml
 ```
