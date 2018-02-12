@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: log4j-appender
+  name: log4j-appender-demo-spring-boot-svc
+  namespace: default
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: log4j-appender
+  type: LoadBalancer

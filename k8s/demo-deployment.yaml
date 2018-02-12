@@ -1,0 +1,24 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: log4j-appender-demo-spring-boot
+  labels:
+    app: log4j-appender
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: log4j-appender
+  template:
+    metadata:
+      labels:
+        app: log4j-appender
+    spec:
+      containers:
+      - name: log4j-appender-demo-spring-boot
+        image: registry.cn-hangzhou.aliyuncs.com/jaegertracing/log4j-appender-demo-spring-boot:0.0.1
+        env:
+        - name: JAVA_OPTS
+          value: "-Dproject={your_project} -Dlogstore={your_logstore} -Dendpoint={your_endpoint} -Daccess_key_id={your_access_key_id} -Daccess_key={your_access}"
+        ports:
+        - containerPort: 8080

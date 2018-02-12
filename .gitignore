@@ -35,5 +35,6 @@ pom.xml.releaseBackup
 # Ignore Local Files
 .wb_test_env_rc
 README.local.md
+k8s/demo-deployment-local.yaml
 
 .DS_Store
