@@ -52,3 +52,21 @@ curl http://${K8S_SERVICE_IP}:8080/nullPointerException
 ```
 curl http://${K8S_SERVICE_IP}:8080/classNotFoundException
 ```
+
+# Analysis
+
+```
+level: ERROR | select location ,count(*) as count GROUP BY  location  ORDER BY count DESC LIMIT 3
+```
+
+```
+| select level ,count(*) as count GROUP BY level ORDER BY count DESC
+```
+
+```
+login | SELECT regexp_extract(message, 'name=(?<name>[a-zA-Z\d]+)', 1) AS name, count(*) as count GROUP BY name ORDER BY count DESC LIMIT 3
+```
+
+```
+Place and order | SELECT regexp_extract(message, 'name=(?<name>[a-zA-Z\d]+)', 1) AS name, sum(cast(regexp_extract(message, 'amount=(?<amount>[a-zA-Z\d]+)', 1) AS double)) AS amount GROUP BY name
+```
