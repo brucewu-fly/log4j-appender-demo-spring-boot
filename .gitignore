@@ -36,5 +36,6 @@ pom.xml.releaseBackup
 .wb_test_env_rc
 README.local.md
 k8s/demo-deployment-local.yaml
+logs/
 
 .DS_Store

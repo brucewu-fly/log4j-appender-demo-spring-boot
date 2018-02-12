@@ -6,7 +6,7 @@
 
     <groupId>org.springframework</groupId>
     <artifactId>log4j-appender-demo-spring-boot</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
