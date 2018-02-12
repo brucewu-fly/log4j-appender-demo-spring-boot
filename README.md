@@ -25,15 +25,30 @@ kubectl create -f demo-service.yaml
 
 ## Login
 ```
-curl ${K8S_SERVICE_IP}:8080/login?name=bruce
+curl http://${K8S_SERVICE_IP}:8080/login?name=bruce
 ```
 
 ## Logout
 ```
-curl ${K8S_SERVICE_IP}:8080/logout?name=bruce
+curl http://${K8S_SERVICE_IP}:8080/logout?name=bruce
 ```
 
 ## Order
 ```
-curl ${K8S_SERVICE_IP}:8080/order?name=bruce&item=apple&amount=20
+curl http://${K8S_SERVICE_IP}:8080/order?name=bruce&item=apple&amount=20
+```
+
+## RuntimeException
+```
+curl http://${K8S_SERVICE_IP}:8080/runtimeException
+```
+
+## NullPointerException
+```
+curl http://${K8S_SERVICE_IP}:8080/runtimeException
+```
+
+## ClassNotFoundException
+```
+curl http://${K8S_SERVICE_IP}:8080/classNotFoundException
 ```
