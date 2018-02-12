@@ -34,5 +34,6 @@ pom.xml.releaseBackup
 
 # Ignore Local Files
 .wb_test_env_rc
+README.local.md
 
 .DS_Store
