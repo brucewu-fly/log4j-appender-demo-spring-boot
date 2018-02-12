@@ -55,18 +55,23 @@ curl http://${K8S_SERVICE_IP}:8080/classNotFoundException
 
 # Analysis
 
+Top 3 locations which generated most error logs.
+
 ```
-level: ERROR | select location ,count(*) as count GROUP BY  location  ORDER BY count DESC LIMIT 3
+level: ERROR | select location ,count(*) as count GROUP BY location  ORDER BY count DESC LIMIT 3
 ```
 
+The number of the logs in different log level.
 ```
 | select level ,count(*) as count GROUP BY level ORDER BY count DESC
 ```
 
+Top 3 users with the most logging times.
 ```
 login | SELECT regexp_extract(message, 'name=(?<name>[a-zA-Z\d]+)', 1) AS name, count(*) as count GROUP BY name ORDER BY count DESC LIMIT 3
 ```
 
+The purchase number of different users.
 ```
 Place and order | SELECT regexp_extract(message, 'name=(?<name>[a-zA-Z\d]+)', 1) AS name, sum(cast(regexp_extract(message, 'amount=(?<amount>[a-zA-Z\d]+)', 1) AS double)) AS amount GROUP BY name
 ```
